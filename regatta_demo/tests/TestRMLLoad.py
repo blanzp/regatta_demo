@@ -20,6 +20,9 @@ class TestRML(TestCase):
     def test_events_first(self):
         self.assertEqual(self.parser.events[0]['eventTitle'],"Womens Varsity 1x")
 
+    def test_events_mens1x(self):
+        self.assertEqual(self.parser.events[1]['eventTitle'],"Mens Varsity 1x")
+
     def test_organizations_type(self):
         self.assertIsInstance(self.parser.organizations,list)
 
