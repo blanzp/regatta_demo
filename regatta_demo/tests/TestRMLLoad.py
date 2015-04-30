@@ -18,7 +18,7 @@ class TestRML(TestCase):
         self.assertGreaterEqual(len(self.parser.events), 20)
 
     def test_events_first(self):
-        self.assertEqual(self.parser.events[0]['name'],"Womens Varsity 1x")
+        self.assertEqual(self.parser.events[0]['eventTitle'],"Womens Varsity 1x")
 
     def test_organizations_type(self):
         self.assertIsInstance(self.parser.organizations,list)
