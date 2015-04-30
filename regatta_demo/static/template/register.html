@@ -1,0 +1,28 @@
+<div class="container" ng-controller="RegisterController as registration">
+
+    <form class="form-signin">
+        <div class="input-group margin-bottom-sm">
+            <span class="input-group-addon"><i class="fa fa-pencil fa-fw" ng-model="first"></i></span>
+            <input class="form-control" type="text" placeholder="First Name">
+        </div>
+        <div class="input-group margin-bottom-sm">
+            <span class="input-group-addon"><i class="fa fa-pencil fa-fw" ng-model="last"></i></span>
+            <input class="form-control" type="text" placeholder="Last Name">
+        </div>
+        <div class="input-group margin-bottom-sm">
+            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" ng-model="email"></i></span>
+            <input class="form-control" type="text" placeholder="Email address">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key fa-fw" ng-model="password1"></i></span>
+            <input class="form-control" type="password" placeholder="Password">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-key fa-fw" ng-model="password2"></i></span>
+            <input class="form-control" type="password" placeholder="Password">
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="onRegister(first,last,email,registration.password1,password2)">Register</button>
+    </form>
+    {{ registration_error }}
+
+</div>

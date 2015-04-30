@@ -1,0 +1,32 @@
+    <div class="panel panel-default">
+        <div class="panel-heading panel_header">Crews: {{eventTitle}}</div>
+        <div class="panel-body">
+            <table class="table">
+                <tr>
+                    <th>Organization</th>
+                    <th>Team Member</th>
+                </tr>
+                <tr ng-repeat="crew in crews">
+                    <td ng-class="{'scratched': crew.status == 'scratched'}">{{ crew.organization.name }}</td>
+                    <td>{{ crew.subTeamId }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div ng-repeat="flight in flights">
+            <div class="panel panel-default">
+            <div class="panel-heading panel_header">Flight: {{eventTitle}} ({{flight.raceNumber}})</div>
+                <div class="panel-body">
+                  <table>
+                    <tr>
+                        <th>Lane</th>
+                        <th>Crew</th>
+                    </tr>
+                    <tr ng-repeat="raceCrew in flight.racingCrew">
+                        <td>{{ raceCrew.laneNumber }}</td>
+                        <td>{{ crew_dict[raceCrew.crew].abbreviatedName }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>

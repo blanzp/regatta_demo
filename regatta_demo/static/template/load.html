@@ -1,0 +1,18 @@
+<div class="panel panel-default" ng-controller="LoadRegattaController">
+    <h3>Enter Regatta Central user/password</h3>
+    <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" ng-model="rc_user"></i></span>
+    <input class="form-control" type="text" placeholder="Regatta Central Userid">
+    <span class="input-group-addon"><i class="fa fa-key fa-fw" ng-model="rc_password"></i></span>
+    <input class="form-control" type="password" placeholder="Regatta Central Password">
+
+    <button class="btn btn-primary" ng-click="onLoad()">Load Regattas</button>
+
+    <table class="table" ng-show="false">
+        <tr>
+            <th>Name</th>
+        </tr>
+        <tr ng-repeat="regatta_file in regatta_files">
+            <td ng-click="selectRegattaFile(regatta_file.name)">{{ regatta_file.name }}</td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" ng-click="onImport()">Import Regatta</button>

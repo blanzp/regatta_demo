@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading start_header">Start Flights</div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Flight</th>
+                        <th>Event Name</th>
+                        <th>Start Time</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tr ng-repeat="flight in flights | orderBy:[orderByEvent,'raceNumber']">
+                        <td>{{ flight.eventNumber }}</td>
+                        <td>{{ flight.raceNumber }}</td>
+                        <td>{{ flight.eventTitle}}</td>
+                        <td>{{ flight.start_time | date:"H:mm:ss.sss" }}</td>
+                        <td ng-class="( flight.status == 'In Progress' )? 'flight_in_progress' : (( flight.status == 'Finished' ) ? 'flight_finished' : '')">{{ flight.status }}</td>
+                        <td>
+                        <a ng-if="isActiveRace(flight.status) == false" href="#/manage/start/{{$index}}?event={{flight.eventNumber}}&stage={{flight.stage_index}}&flight={{flight.race_index}}"><i class="fa fa-chevron-right"></i></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

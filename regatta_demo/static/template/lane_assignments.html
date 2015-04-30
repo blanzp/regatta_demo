@@ -1,0 +1,24 @@
+<div class="panel panel-default" ng-controller="BoatController as boat">
+    <!-- Default panel contents -->
+    <input class="btn btn-default" type="button" value="Assign Lanes" ng-click="onAssignLanes()">
+
+    <div class="panel-heading">Events</div>
+
+    <!-- Table -->
+    <table class="table">
+        <tr>
+            <th>Event</th>
+            <th>Team</th>
+            <th>Seed</th>
+            <th>Label</th>
+            <th>Lane</th>
+        </tr>
+        <tr ng-repeat="boat in boat.events | filter:{Event:search}">
+            <td>{{ boat.Event }}</td>
+            <td>{{ boat.Team }}</td>
+            <td>{{ boat.Seed }}</td>
+            <td>{{ boat.Boat_Label }}</td>
+            <td>{{ boat.Bow_Lane_ID }}</td>
+        </tr>
+    </table>
+</div>

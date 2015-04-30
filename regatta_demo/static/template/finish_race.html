@@ -1,0 +1,40 @@
+<div class="panel panel-default">
+    <div class="panel-heading start_header">Finishing Flight: {{ flight.eventNumber }}-{{ flight.raceNumber }}. {{ flight.eventTitle}}</div>
+    <div class="panel-body">
+        <button class="btn btn-danger" ng-click="onFinishClock()" ng-disabled="remainingRacers == 0">Finish</button>
+        <button class="btn btn-primary" ng-click="onDNF()" ng-disabled="remainingRacers == 0">DNF</button>
+        {{ finish_status }}
+
+        <br>
+        <table class="table">
+            <tr>
+                <th>Order</th>
+                <th>Split Time</th>
+                <th>Lane</th>
+                <th>Team</th>
+            </tr>
+            <tr ng-repeat="finish in finish_times">
+                <td>{{ $index+1 }}</td>
+                <td>{{ finish.split_time | date:"mm:ss.sss" }}</td>
+                <td>
+                    <select ng-options="lane.label for lane in expectedRacers" ng-model="selectedLane" ng-change="onLaneAssignment($index+1,selectedLane)">
+                    </td>
+                    <td>{{ finish.team }}{{ finish.subTeamId }}</td>
+                </tr>
+            </table>
+        <!--
+            <table class="table">
+                <tr>
+                    <th>Lane</th>
+                    <th>Team</th>
+                </tr>
+                <tr ng-repeat="crew in flight.racingCrew | orderBy:orderByLane">
+                    <td>{{ crew.laneNumber }}</td>
+                    <td>{{ crew.organization.abbreviatedName }}</td>
+                </tr>
+            </table>
+        -->
+        <button ng-disabled="saveButtonDisable" class="btn btn-primary" ng-click="save()">Save</button>
+        <span class="start_status pull-right">{{ status }}</span>
+    </div>
+</div>

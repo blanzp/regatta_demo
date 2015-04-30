@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+    <div class="container">
+        <img id="logo" class="logo"/>
+
+        <h2><center>{{ regatta.name }}</center></h2>
+        <center><strong{{ regatta.startDate }}</strong></center>
+    </div>
+    <div class="container-fluid">
+        <div class="row" ng-repeat="rows in resultCols">
+            <div class="col-sm-4" ng-repeat="result in rows">
+                <div class="flightContainer">
+                    <div class="results-header">
+                        {{ result.raceNumber }}.
+                        {{ result.eventTitle }}
+                        <span ng-if="result.status">({{ result.status }})</span>
+                    </div>
+                    <div class="flightResultsTableContainer">
+                        <table class="fightResultsTable">
+                            <tr class="results_data">
+                                <th>Place</th>
+                                <th>Lane</th>
+                                <th>Name</th>
+                                <th>Time</th>
+                            </tr>
+                            <tr class="results_data" ng-repeat="crew in result.racingCrew | orderBy:'order'">
+                                <td>{{ crew.order }}</td>
+                                <td>{{ crew.laneNumber }}</td>
+                                <td>{{ crew.organization.abbreviatedName }} <span ng-if="crew.subTeamId">({{ crew.subTeamId }})</span></td>
+                                <td><span ng-if="result.winning_time">{{ result.winning_time - result.start_time + crew.finish_split_time | date:"mm:ss.sss" }}</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

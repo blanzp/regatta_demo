@@ -1,0 +1,17 @@
+<div class="panel panel-default" ng-controller="StartRaceController">
+    <div class="panel-heading start_header">Starting Flight: {{ flight.eventNumber }}-{{ flight.raceNumber }}. {{ flight.eventTitle}}</div>
+    <div class="panel-body">
+        <ul class="list-group">
+        <!--
+            <li class="list-group-item"><span class="start_label">Event:</span> {{ flight.eventNumber }} </li>
+            <li class="list-group-item"><span class="start_label">Flight:</span> {{ flight.raceNumber }}</li>
+            <li class="list-group-item"><span class="start_label">Name:</span> {{ flight.eventTitle}}</li>
+                        -->
+
+            <li class="list-group-item"><span class="start_label">Flight Clock: {{ flightClock | date:"H:mm:ss.sss" }}</span></li>
+        </ul>
+        <button ng-disabled="startButtonDisable" class="btn btn-success" ng-click="onStartClock()">Start</button>
+        <button ng-disabled="saveButtonDisable" class="btn btn-primary" ng-click="save()">Save</button>
+        <span class="start_status pull-right">{{ status }}</span>
+    </div>
+</div>

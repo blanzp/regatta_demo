@@ -1,0 +1,1 @@
+python regatta_demo/application.py --rml_file="C:\Users\Paul\downloads/Long-Island-Junior-Rowing-Championships-2015-05-03.rml" --twitter_hashtag=#LIChamps --twitter_acct=sagamorerowing

@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-md-12">
+        <table id="events" class="table table-striped">
+            <tr>
+                <th>Event Number</th>
+                <th>Event Title</th>
+            </tr>
+            <tr ng-repeat="event in events | orderBy:orderEvent" ng-click="showCrew(event)">
+                <td>{{ event.eventNumber }}</td>
+                <td>{{ event.eventTitle }}<i class="fa fa-chevron-right pull-right"></i></td>
+            </tr>
+        </table>
+    </div>
+</div>

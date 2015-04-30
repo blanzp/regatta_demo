@@ -1,0 +1,94 @@
+
+.logo {
+    float: left;
+    height: 50px;
+    width: 50px;
+}
+.selected {
+  background-color: green;
+  color: rgb(255,255,255);
+}
+.scratched {
+    text-decoration: line-through;
+}
+.clock {
+	font-size: large;
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.results-header
+{
+    color:white;
+    padding:5px;
+    border-radius:3px;
+    font-family:helvetica neue, Arial, helvetica, sans-serif;
+    font-size:14;
+    font-weight:bold;
+    width: inherit;
+    background-color: rgb(60,157,27);
+ }
+.results-detail
+{
+    font-size:6;
+}
+.race-detail
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0px;
+    padding-bottom: 75px;
+}
+
+.flightResultsTableContainer
+{
+}
+
+.flightResultsTable
+{
+    font-size: 1.0em;
+}
+.flightContainer
+{
+   margin: 5px;
+   border-radius: 3px;
+}
+
+.start_label
+{
+    font-weight: bold;
+}
+.start_header
+{
+    font-size: larger;
+    font-weight: bold;
+}
+.panel_header
+{
+    font-size: larger;
+    font-weight: bold;
+}
+.start_status
+{
+    font-weight: bold;
+    color: red;
+}
+
+.flight_in_progress
+{
+    color: green;
+    font-weight: bold;
+}
+.flight_finished
+{    
+    font-weight: bold;
+    color: red;
+}
+.results_data
+{
+    font-size: .9em;
+}
+.ul
+{
+    list-style-type: none;
+}

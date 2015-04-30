@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row" ng-repeat="rows in resultCols">
+        <div class="col-sm-4" ng-repeat="result in rows">
+            <div class="row">
+            <div class="flightContainer">
+                <div class="results-header">
+                    {{ result.raceNumber }}.{{ result.eventTitle }}({{ result.stageType }})
+                    <span ng-if="result.status">({{ result.status }})</span>
+                    <!--
+                    <a href="javascript: tweetURL(result);" class="btn btn-default btn-sm pull-right" role="button">Tweet</a>
+               -->
+                </div>
+                <div class="flightResultsTableContainer">
+                    <table class="fightResultsTable table-responsive">
+                        <tr class="results_data">
+                            <th>Place</th>
+                            <th>Lane</th>
+                            <th>Name</th>
+                            <th>Raw Time</th>
+                            <th>Split Time</th>
+                        </tr>
+                        <tr class="results_data" ng-repeat="crew in result.racingCrew | orderBy:'order'">
+                            <td><span ng-if="result.winningSplit.time !== '00:00:00Z'">{{ $index+1 }}</span></td>
+                            <td>{{ crew.laneNumber }}</td>
+                            <td>{{ crew.organization.abbreviatedName }}
+                                <div ng-if="crew.subTeamId">({{ crew.subTeamId }})</div>
+                            </td>
+                            <td>
+                                <div ng-if="result.winningSplit.time !== '00:00:00Z'">{{
+                                    addDurationFormatted(result.winningSplit.time, crew.results.split.time) }}
+                                </div>
+                            </td>
+                            <td>
+                                <div ng-if="result.winningSplit.time !== '00:00:00Z'">{{
+                                    formatDurationFormatted(crew.results.split.time) }}
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <a href="drafts://x-callback-url/create?text={{ custom.hashtag }}%20{{tweetURL(result)}}&action=Tweetbot&afterSuccess=Delete&x-success=safari:">Tweet Result</a>
+
+                    <div>{{ custom.hashtag }} {{ tweetText(result) }}</div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="regattaApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Regatta</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/regatta.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class='row'>
+            <div class='col-sm-12'>
+                <div ng-include="'/template/navbar.html'"></div>
+            </div>
+        </div>
+        <!-- <div class="ng-view"></div> -->
+        <div ui-view></div>
+    </div>
+
+    <script src="/js/jquery-1.11.2.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/angular.js"></script>
+    <script src="/js/underscore-min.js"></script>
+    <script src="/js/ui-bootstrap.min.js"></script>
+    <script src="/js/angular-cookies.min.js"></script>
+    <script src="/js/angular-file-upload.min.js"></script>
+    <script src="/js/moment.min.js"></script>
+
+
+    <script src="/js/main.js"></script>
+    <script src="/js/eventsCtrl.js"></script>
+    <script src="/js/startCtrl.js"></script>
+    <script src="/js/startRaceCtrl.js"></script>
+    <script src="/js/flightCrew.js"></script>
+
+    <script src="/js/teamCtrl.js"></script>
+    <script src="/js/finishCtrl.js"></script>
+    <script src="/js/finishRaceCtrl.js"></script>
+    <script src="/js/resultsCtrl.js"></script>
+    <script src="/js/manageResults.js"></script>
+    <script src="/js/angular-ui-router.min.js"></script>
+
+
+</body>
+</html>

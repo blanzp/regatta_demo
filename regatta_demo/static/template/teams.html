@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading start_header">Teams</div>
+    <div class="panel-body">
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Abbrev</th>
+            </tr>
+            <tr ng-repeat="team in teams">
+                <td>{{ team.name }}</td>
+                <td>{{ team.abbreviatedName }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
